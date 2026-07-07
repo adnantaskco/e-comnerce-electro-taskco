@@ -17,8 +17,7 @@ import GamingCard from "@/components/productcard/GamingCard";
 export default function Home() {
   return (
 <>
-<TopNavbar></TopNavbar>
-<MainNav></MainNav>
+
 <HeroSection></HeroSection>
 <BrandLogos></BrandLogos>
 <BestsellerTabs/>
@@ -29,7 +28,7 @@ export default function Home() {
 <GamingCard></GamingCard>
 <UsefulArticles></UsefulArticles>
 <SeoDescriptionSection></SeoDescriptionSection>
-<FooterSection></FooterSection>
+
 
 
 </>

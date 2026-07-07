@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CartProvider } from "./context/CartContext";
+import FooterSection from "@/components/fotter";
+import TopNavbar from "@/components/TopNavbar";
+import MainNav from "@/components/MainNavbar";
 
 export const metadata: Metadata = {
   title: "Taskco Tech",
@@ -13,9 +17,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-full flex flex-col antialiased">
+      <body className="min-h-full flex flex-col">
+        <CartProvider>
+        <TopNavbar></TopNavbar>
+        <MainNav></MainNav>
+
         {children}
-      </body>
+       <FooterSection></FooterSection>
+        
+        </CartProvider>
+        </body>
     </html>
   );
 }

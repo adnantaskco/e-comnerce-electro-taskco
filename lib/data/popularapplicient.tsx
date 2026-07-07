@@ -1,6 +1,6 @@
 export const kitchenAppliancesProducts = [
   {
-    id: 21,
+    id: 51,
     brand: "Philips",
     name: "Philips Air Fryer XL",
     has_variants: false,
@@ -17,7 +17,7 @@ export const kitchenAppliancesProducts = [
     sale_price: 20000,
   },
   {
-    id: 22,
+    id: 52,
     brand: "Panasonic",
     name: "Panasonic 25L Microwave Oven",
     has_variants: false,
@@ -34,7 +34,7 @@ export const kitchenAppliancesProducts = [
     sale_price: 16500,
   },
   {
-    id: 23,
+    id: 53,
     brand: "Samsung",
     name: "Samsung Double Door Refrigerator",
     has_variants: true,
@@ -51,7 +51,7 @@ export const kitchenAppliancesProducts = [
     sale_price: 80000,
   },
   {
-    id: 24,
+    id: 54,
     brand: "LG",
     name: "LG Smart Dishwasher",
     has_variants: false,
@@ -68,7 +68,7 @@ export const kitchenAppliancesProducts = [
     sale_price: 68000,
   },
   {
-    id: 25,
+    id: 55,
     brand: "Bosch",
     name: "Bosch Stand Mixer",
     has_variants: true,
@@ -85,7 +85,7 @@ export const kitchenAppliancesProducts = [
     sale_price: 26000,
   },
   {
-    id: 26,
+    id: 56,
     brand: "Black+Decker",
     name: "Black+Decker Blender Pro",
     has_variants: false,
@@ -102,7 +102,7 @@ export const kitchenAppliancesProducts = [
     sale_price: 8800,
   },
   {
-    id: 27,
+    id: 57,
     brand: "Miyako",
     name: "Miyako Electric Rice Cooker",
     has_variants: false,
@@ -119,7 +119,7 @@ export const kitchenAppliancesProducts = [
     sale_price: 4800,
   },
   {
-    id: 28,
+    id: 58,
     brand: "Kenwood",
     name: "Kenwood Electric Kettle",
     has_variants: false,
@@ -136,7 +136,7 @@ export const kitchenAppliancesProducts = [
     sale_price: 3900,
   },
   {
-    id: 29,
+    id: 59,
     brand: "Breville",
     name: "Breville Espresso Coffee Machine",
     has_variants: true,
@@ -153,7 +153,7 @@ export const kitchenAppliancesProducts = [
     sale_price: 63000,
   },
   {
-    id: 30,
+    id: 60,
     brand: "Tefal",
     name: "Tefal Induction Cooktop",
     has_variants: false,

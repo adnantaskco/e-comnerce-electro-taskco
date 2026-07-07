@@ -65,13 +65,13 @@ export default function HeroCarousel() {
           >
             {/* Header Typography */}
             <div className="mt-6 z-10 max-w-md">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2 tracking-tight">
+              <h1 className="text-3xl font-bold text-ring mb-2 tracking-tight">
                 {slide.title}
               </h1>
-              <p className="text-gray-500 mb-5 font-medium">
+              <p className="text-ring mb-5 font-medium">
                 {slide.subtitle}
               </p>
-              <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2.5 rounded-full text-sm transition-all shadow-sm">
+              <button className="bg-primary hover:bg-primary/50 text-text-secondary font-semibold px-6 py-2.5 rounded-full text-sm transition-all shadow-sm active:scale-95">
                 {slide.buttonText}
               </button>
             </div>
@@ -91,27 +91,27 @@ export default function HeroCarousel() {
       {/* Manual Left/Right Arrow Navigation Controls */}
       <button 
         onClick={handlePrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md text-gray-700 transition-all opacity-0 group-hover:opacity-100 z-20"
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background p-2 rounded-full shadow-md text-ring transition-all opacity-0 group-hover:opacity-100 z-20"
       >
         <ChevronLeft size={20} />
       </button>
       <button 
         onClick={handleNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-md text-gray-700 transition-all opacity-0 group-hover:opacity-100 z-20"
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-background/80 hover:bg-background p-2 rounded-full shadow-md text-ring transition-all opacity-0 group-hover:opacity-100 z-20"
       >
         <ChevronRight size={20} />
       </button>
 
       {/* Navigation Links Layer */}
-      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-6 text-xs font-semibold text-gray-400 z-10 bg-gradient-to-t from-white/10 to-transparent pt-4">
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-6 text-xs font-semibold text-ring/50 z-10 bg-gradient-to-t from-background/10 to-transparent pt-4">
         {SLIDES.map((slide, index) => (
           <button
             key={slide.id}
             onClick={() => setCurrentIndex(index)}
             className={`pb-1 transition-all border-b-2 cursor-pointer ${
               currentIndex === index 
-                ? 'text-gray-900 border-blue-600 font-bold' 
-                : 'border-transparent hover:text-gray-700'
+                ? 'text-ring border-primary font-bold' 
+                : 'border-transparent hover:text-ring'
             }`}
           >
             {slide.label}

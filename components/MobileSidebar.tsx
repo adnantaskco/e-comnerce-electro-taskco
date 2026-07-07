@@ -81,12 +81,12 @@ export default function MobileSidebar({
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 z-50 h-screen w-80 max-w-[85%] bg-white shadow-2xl transition-transform duration-300 ${
+        className={`fixed top-0 left-0 z-50 h-screen w-80 max-w-[85%] bg-background shadow-2xl transition-transform duration-300 ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Header */}
-        <div className="bg-primary/20 p-5 text-white">
+        <div className="bg-primary/20 p-5 text-text-secondary">
           <div className="flex items-center justify-between">
             <img
               src="https://taskco.io/assets/taskco.svg"
@@ -96,7 +96,7 @@ export default function MobileSidebar({
 
             <button
               onClick={() => setOpen(false)}
-              className="rounded-full p-2 hover:bg-white/20"
+              className="rounded-full p-2 hover:bg-background/20"
             >
               <FiX size={22} />
             </button>
@@ -107,7 +107,7 @@ export default function MobileSidebar({
             onClick={() => setOpen(false)}
             className="mt-6 flex items-center gap-3"
             >
-            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-primary">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full bg-background text-primary">
                 <FiUser size={22} />
             </div>
 
@@ -125,7 +125,7 @@ export default function MobileSidebar({
 
           {/* Quick Menu */}
           <div className="border-b p-4">
-            <div className="grid grid-cols-3 gap-4 text-center">
+            <div className="grid grid-cols-3 gap-4 text-center text-text-primary">
 
               <Link
                 href="/cart"
@@ -164,7 +164,7 @@ export default function MobileSidebar({
           </div>
 
           {/* Categories */}
-          <div className="p-4">
+          <div className="p-4 text-ring">
 
             <h3 className="mb-4 text-lg font-bold">
               Categories
@@ -198,7 +198,7 @@ export default function MobileSidebar({
                     </button>
 
                     {isOpen && (
-                      <div className="space-y-2 bg-gray-50 px-6 py-3">
+                      <div className="space-y-2 bg-ring/5 px-6 py-3">
 
                         {item.brands.map((brand) => (
                           <Link

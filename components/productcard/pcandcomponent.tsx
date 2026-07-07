@@ -5,9 +5,11 @@ import React, { useState } from "react";
 import { FaHeart, FaShoppingCart, FaStar, FaEye } from "react-icons/fa";
 import Link from "next/link";
 import { DatapcComponentsProducts } from "@/lib/data/pc&component";
+import { useCart } from "@/app/context/CartContext";
 
 const PcComponent = () => {
   const [hovered, setHovered] = useState<number | null>(null);
+  const { addToCart } = useCart();
 
   return (
     <section className="w-full bg-background">
@@ -27,7 +29,7 @@ const PcComponent = () => {
                 onMouseEnter={() => setHovered(item.id)}
                 onMouseLeave={() => setHovered(null)}
                 onTouchStart={() => setHovered(item.id)}
-                className="bg-card text-card-foreground rounded-2xl overflow-hidden border border-border/60 hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.5)] transition-all duration-500 hover:-translate-y-1.5 group flex flex-col h-full select-none"
+                className="bg-ring/2 text-card-foreground rounded-2xl overflow-hidden border border-border/60 hover:shadow-ring  transition-all duration-500 hover:-translate-y-1.5 group flex flex-col h-full select-none"
               >
                 {/* IMAGE BOX */}
                 <div className="relative bg-muted/30 aspect-square w-full flex items-center justify-center p-4 overflow-hidden select-none">
@@ -52,7 +54,7 @@ const PcComponent = () => {
 
                   {/* DISCOUNT BADGE */}
                   {item.has_discount && discountPercentage > 0 && (
-                    <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-ring/10 text-destructive-foreground text-[10px] sm:text-xs font-bold px-2 py-1 rounded-lg shadow-sm z-10 backdrop-blur-sm bg-opacity-90">
+                    <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-ring/10 text-text-primary text-[10px] sm:text-xs font-bold px-2 py-1 rounded-lg shadow-sm z-10 backdrop-blur-sm bg-opacity-90">
                       -{discountPercentage}%
                     </div>
                   )}
@@ -86,6 +88,14 @@ const PcComponent = () => {
                     <div className="w-[1px] h-3 bg-border" />
 
                     <button 
+                    onClick={() =>
+                      addToCart({
+                        id: item.id,
+                        name: item.name,
+                         price: Number(item.sale_price),
+                        image: item.images[0],
+                      })
+                    }
                       onTouchStart={(e) => e.stopPropagation()}
                       className="w-7 h-7 rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 active:scale-95 transition-all" 
                       title="Add to Cart"
@@ -96,9 +106,9 @@ const PcComponent = () => {
                 </div>
 
                 {/* DETAILS/CONTENT BOX */}
-                <Link href={`/products/${item.slug || item.id}`} className="p-3 md:p-4 flex flex-col flex-grow group/link">
-                  <p className="text-[10px] md:text-xs text-muted-foreground tracking-wider uppercase font-medium">{item.brand}</p>
-                  <h2 className="text-xs md:text-sm text-card-foreground font-semibold mt-0.5 group-hover/link:text-primary transition-colors line-clamp-2 min-h-[2rem]">
+                <Link href={`/products/${item.id}`} className="p-3 md:p-4 flex flex-col flex-grow group/link">
+                  <p className="text-[10px] md:text-xs text-text-primary tracking-wider uppercase font-medium">{item.brand}</p>
+                  <h2 className="text-xs md:text-sm text-text-primary font-semibold mt-0.5 group-hover/link:text-primary transition-colors line-clamp-2 min-h-[2rem]">
                     {item.name}
                   </h2>
 
@@ -112,7 +122,7 @@ const PcComponent = () => {
                         />
                       ))}
                     </div>
-                    <span className="text-[10px] md:text-xs text-muted-foreground font-medium">({item.review})</span>
+                    <span className="text-[10px] md:text-xs text-ring font-medium">({item.review})</span>
                   </div>
 
                   {/* PRICING */}
@@ -121,7 +131,7 @@ const PcComponent = () => {
                       BDT {item.sale_price.toLocaleString()}
                     </span>
                     {item.has_discount && (
-                      <span className="line-through text-muted-foreground text-[10px] md:text-xs font-normal">
+                      <span className="line-through text-ring text-[10px] md:text-xs font-normal">
                         BDT {item.retail_price.toLocaleString()}
                       </span>
                     )}

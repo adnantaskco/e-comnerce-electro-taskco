@@ -13,9 +13,11 @@ import {
 import Link from "next/link";
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import { useCart } from "@/app/context/CartContext";
 
 export default function GamingCard() {
   const [hovered, setHovered] = useState<number | null>(null);
+  const { addToCart } = useCart();
 
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "start",
@@ -136,7 +138,15 @@ export default function GamingCard() {
 
                           <div className="w-[1px] h-3 bg-border" />
 
-                          <button 
+                          <button
+                          onClick={() =>
+                      addToCart({
+                        id: item.id,
+                        name: item.name,
+                         price: Number(item.sale_price),
+                        image: item.images[0],
+                      })
+                    } 
                             onTouchStart={(e) => e.stopPropagation()} 
                             className="w-7 h-7 rounded-lg flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 active:scale-95 transition-all" 
                             title="Add to Cart"
@@ -147,7 +157,7 @@ export default function GamingCard() {
                       </div>
 
                       {/* DETAILS/CONTENT BOX */}
-                      <Link href={`/products/${item.slug || item.id}`} className="p-3 md:p-4 flex flex-col flex-grow group/link">
+                      <Link href={`/products/${ item.id}`} className="p-3 md:p-4 flex flex-col flex-grow group/link">
                         <p className="text-[10px] md:text-xs text-muted-foreground tracking-wider uppercase font-medium">{item.brand}</p>
                         <h2 className="text-xs md:text-sm text-card-foreground font-semibold mt-0.5 group-hover/link:text-primary transition-colors line-clamp-2 min-h-[2rem]">
                           {item.name}

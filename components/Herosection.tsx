@@ -39,11 +39,11 @@ export default function HeroSection() {
 
 
   return (
-    <div className="container mx-auto px-4 py-6 md:px-16">
+    <div className="container mx-auto px-4 py-3 md:px-16">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         
         {/* --- LEFT SIDEBAR: CATEGORIES --- */}
-        <div className="hidden md:block lg:col-span-1 rounded-2xl border border-ring/10 bg-background p-5 shadow-sm">
+        <div className="hidden md:block lg:col-span-1 rounded-2xl border border-ring/20 bg-primary/10 p-5 shadow-sm">
         <h2 className="mb-6 text-2xl font-bold text-text-primary">
           Choose Your Favourite
         </h2>
@@ -79,7 +79,7 @@ export default function HeroSection() {
         </div>
 
         {/* --- RIGHT SIDEBAR: HOT DEALS --- */}
-        <div className="lg:col-span-1 border border-gray-200 rounded-lg p-2 bg-white shadow-sm flex flex-col justify-between">
+        <div className="lg:col-span-1 border border-ring/10 rounded-lg p-2 bg-white shadow-sm flex flex-col justify-between">
 
               <HotDealsSidebar></HotDealsSidebar>
 

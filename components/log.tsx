@@ -8,7 +8,7 @@ export default function BrandLogos() {
 
   return (
     <section className="w-full overflow-hidden py- bg-gradient-to-b from-transparent via-gray-50/40 to-transparent">
-      <div className="container mx-auto px-4 lg:px-16">
+      <div className="container mx-auto px-4 md:px-16 lg:px-16">
         {/* Header */}
         {/* <div className="mb-8 text-center">
           <p className="text-xs font-bold uppercase tracking-[0.3em] text-muted-foreground">
@@ -34,17 +34,15 @@ export default function BrandLogos() {
             {brands.map((brand, index) => (
               <div
                 key={index}
-                className="
-                  group
+                className="           
                   flex
-                  h-24
-                  w-40
-                  shrink-0
+                  h-20
+                  w-36                
                   items-center
                   justify-center
                   rounded-2xl
                   border
-                  border-border/40
+                  border-ring/50
                   bg-background
                   shadow-sm
                   transition-all
@@ -61,13 +59,7 @@ export default function BrandLogos() {
                     max-h-10
                     max-w-[80%]
                     object-contain
-                    grayscale
-                    opacity-60
-                    transition-all
-                    duration-300
-                    group-hover:scale-110
-                    group-hover:grayscale-0
-                    group-hover:opacity-100
+
                   "
                 />
               </div>

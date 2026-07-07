@@ -2,10 +2,7 @@ import React, { useState } from 'react';
 import IphoneCard from './productcard/Mobilecard';
 import PcComponent from './productcard/pcandcomponent';
 import ApplicaentCard from './productcard/Applicantcart';
-// Mock components based on your layout
-const SmartPhone = () => <div className="py-4 text-muted-foreground animate-fadeIn">Smartphones Content Layout</div>;
-const PComponent = () => <div className="py-4 text-muted-foreground animate-fadeIn">PC & Components Content Layout</div>;
-const Appliance = () => <div className="py-4 text-muted-foreground animate-fadeIn">Appliances Content Layout</div>;
+
 
 const BestsellerTabs = () => {
   // State to track the currently active tab
@@ -39,8 +36,8 @@ const BestsellerTabs = () => {
                   className={`
                     px-4 py-2 rounded-full font-semibold text-xs md:text-sm select-none transition-all duration-200 active:scale-95
                     ${isActive 
-                      ? 'bg-primary text-primary-foreground shadow-sm' 
-                      : 'bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground'
+                      ? 'bg-primary text-text-secondary shadow-sm' 
+                      : 'bg-ring/10 text-ring hover:bg-primary/80 hover:text-foreground'
                     }
                   `}
                 >

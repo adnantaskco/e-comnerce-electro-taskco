@@ -58,17 +58,22 @@
 
   --border: oklch(0.928 0.006 264.531);
   --input: oklch(0.928 0.006 264.531);
-  --ring: oklch(0.707 0.022 261.325);
+/* use ring  bg and text gray */
+  --ring: #444648 ;
+   /* use for text */
+  --text-primary: #030712;           
+  --text-secondary: oklch(0.967 0.001 286.375);
+  --text-star: #F7F700 ;
 
   --background: oklch(1 0 0);
   --foreground: oklch(0.13 0.028 261.692);
-  --primary: #3C5CF5;
+  --primary: #3966FF;
   --primary-foreground: oklch(0.98 0.02 201);
   --secondary: oklch(0.967 0.001 286.375);
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.003 264.542);
   --muted-foreground: oklch(0.551 0.027 264.364);
-  --accent: #ff6c03;
+  --accent: ;
   --accent-foreground: oklch(0.98 0.02 201);
   --destructive: oklch(0.577 0.245 27.325);
 
@@ -210,6 +215,28 @@ button:hover:not(:disabled),
 .dynamic-content a {
   @apply text-primary hover:underline;
 }
+
+/* Premium smooth button hover transition override */
+button,
+.button,
+[role='button'],
+[data-slot='button'] {
+  transition:
+    background-color 0.3s ease-in-out,
+    border-color 0.3s ease-in-out,
+    color 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out !important;
+}
+@theme {
+  --color-text-primary: #000000;
+  --color-text-secondary: oklch(0.967 0.001 286.375);
+}
+.text-secondary{
+  color: #D1D5DC;
+}
+
+
+
 
 /* Premium smooth button hover transition override */
 button,
