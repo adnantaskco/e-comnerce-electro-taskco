@@ -71,12 +71,12 @@ const handleSubmitReview = (e: React.FormEvent<HTMLFormElement>) => {
 
   return (
     <div className="container mx-auto px-4 md:px-16 py-10">
-      <nav className="flex items-center space-x-2 text-xs md:text-sm text-gray-400 mb-8 border-b border-gray-100 pb-4">
-          <a href="#" className="hover:text-[#333e48] transition">Home</a>
+      <nav className="flex items-center space-x-2 text-xs md:text-sm text-ring mb-8 border-b borderring/20 pb-4">
+          <a href="/home" className="hover:text-text-primary transition">Home</a>
           <span>/</span>
-          <a href="#" className="hover:text-[#333e48] transition">Products</a>
+          <Link href="/products" className="hover:text-text-primary transition">Products</Link>
           <span>/</span>
-          <span className="text-gray-600 font-medium">{product.name}</span>
+          <span className="text-ring font-medium">{product.name}</span>
         </nav>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
@@ -94,7 +94,7 @@ const handleSubmitReview = (e: React.FormEvent<HTMLFormElement>) => {
 
         {/* DETAILS SECTION */}
         <div className="space-y-5">
-          <p className="text-sm text-ring">{product.brand || "ElectricScooter"}</p>
+          <p className="text-sm text-ring">{product.brand || "Null"}</p>
           <h1 className="text-2xl sm:text-3xl text-text-primary font-bold">{product.name}</h1>
 
           {/* Rating + Sold */}
@@ -103,14 +103,14 @@ const handleSubmitReview = (e: React.FormEvent<HTMLFormElement>) => {
               <CiStar className="text-lg text-text-star" /> {product.review || 4.5}
             </span>
             <span className="text-ring">
-              {product.sold_amount || 120} Sold
+              {product.sold_amount || 12} Sold
             </span>
           </div>
           <div>
             <h1 className="text-text-primary font-semibold ">Description:</h1>
             <p className="text-sm text-text-primary leading-relaxed mb-4">
             Experience premium quality and exceptional performance with the{" "}
-            <strong className="font-semibold text-blue-600">
+            <strong className="font-semibold text-primary">
               {product?.name || "this product"}
             </strong>
             . Engineered to deliver reliable efficiency and modern functionality, it is designed to seamlessly fit into your daily routine. Crafted with high-grade durability and user convenience in mind, it offers the perfect balance of value and excellence.
@@ -288,7 +288,7 @@ const handleSubmitReview = (e: React.FormEvent<HTMLFormElement>) => {
         </div>
         <p className="text-sm text-ring italic mb-6">No direct written user reviews yet. Be the first to write one!</p>
 
-        <hr className="border-gray-200 mb-6" />
+        <hr className="border-background/20 mb-6" />
 
         {/* Leave a Review Form */}
         <form onSubmit={handleSubmitReview} className="space-y-4 bg-ring/1 p-4 rounded-lg">
@@ -303,7 +303,7 @@ const handleSubmitReview = (e: React.FormEvent<HTMLFormElement>) => {
               key={star}
               type="button"
               className={`text-2xl transition-colors ${
-                star <= (hoverRating || rating) ? "text-text-star" : "text-ring/50"
+                star <= (hoverRating || rating) ? "text-yellow-500" : "text-ring/50"
               }`}
               onClick={() => setRating(star)}
               onMouseEnter={() => setHoverRating(star)}
@@ -323,7 +323,7 @@ const handleSubmitReview = (e: React.FormEvent<HTMLFormElement>) => {
         <textarea
           id="comment"
           rows={4}
-          className="w-full p-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm text-text-primary"
+          className="w-full p-2 border border-ring/20 rounded-md focus:ring-2 focus:ring-primary focus:outline-none text-sm text-text-primary"
           placeholder="Share your thoughts about this product..."
           value={comment}
           onChange={(e) => setComment(e.target.value)}
@@ -335,10 +335,10 @@ const handleSubmitReview = (e: React.FormEvent<HTMLFormElement>) => {
       <button
         type="submit"
         disabled={rating === 0}
-        className={`px-4 py-2 rounded-md text-sm font-medium text-white transition-colors ${
+        className={`px-4 py-2 rounded-md text-sm font-medium text-text-secondary transition-colors ${
           rating === 0 
-            ? "bg-gray-400 cursor-not-allowed" 
-            : "bg-blue-600 hover:bg-blue-700"
+            ? "bg-ring cursor-not-allowed" 
+            : "bg-primary hover:bg-primary/50"
         }`}
       >
         Submit Review

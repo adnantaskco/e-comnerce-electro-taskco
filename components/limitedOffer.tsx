@@ -71,26 +71,26 @@ export default function LimitedOffersSection() {
   }, []);
 
   return (
-    <section className="py-10 bg-white text-gray-800">
+    <section className="py-10 bg-background text-ring">
       <div className='container mx-auto px-4 md:px-16'>
             {/* --- HEADER CONTROLS BAR --- */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-gray-100 pb-6 mb-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-ring/10 pb-6 mb-6">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900 tracking-tight">Limited Offers!</h2>
-          <p className="text-gray-400 text-sm font-medium mt-1">Hurry Up To Buy These Products With Discount.</p>
+          <h2 className="text-3xl font-bold text-ring tracking-tight">Limited Offers!</h2>
+          <p className="text-ring text-sm font-medium mt-1">Hurry Up To Buy These Products With Discount.</p>
         </div>
 
         {/* Countdown Timer Blobs */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 text-text-primary">
           {[
             { value: timeLeft.days, label: 'Days' },
             { value: timeLeft.hours, label: 'Hr' },
             { value: timeLeft.minutes, label: 'Min' },
             { value: timeLeft.seconds, label: 'Sc' }
           ].map((block, i) => (
-            <div key={i} className="flex flex-col items-center justify-center bg-gray-50 border border-gray-100 rounded-xl p-2 min-w-[64px] shadow-sm">
-              <span className="text-xl font-bold text-gray-800">{String(block.value).padStart(2, '0')}</span>
-              <span className="text-[10px] uppercase tracking-wider text-gray-400 font-semibold mt-0.5">{block.label}</span>
+            <div key={i} className="flex flex-col items-center justify-center bg-ring/10 border border-ring/20 rounded-xl p-2 min-w-[64px] shadow-sm">
+              <span className="text-xl font-bold text-ring">{String(block.value).padStart(2, '0')}</span>
+              <span className="text-[10px] uppercase tracking-wider text-ring font-semibold mt-0.5">{block.label}</span>
             </div>
           ))}
         </div>
@@ -100,17 +100,17 @@ export default function LimitedOffersSection() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Left Aspect: Mega Billboard Deal */}
-        <div className="lg:col-span-1 bg-black text-white rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden ">
+        <div className="lg:col-span-1 bg-foreground text-text-secondary rounded-3xl p-8 flex flex-col justify-between relative overflow-hidden ">
           <div className="text-center z-10 mt-4">
-            <span className="text-xs font-semibold uppercase tracking-widest text-gray-400">Mi Cordless Screwdriver</span>
-            <h3 className="text-3xl font-black tracking-tight mt-1 mb-6">AirPods Pro 3</h3>
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs px-6 py-2.5 rounded-full transition-all shadow-md">
+            <span className="text-xs font-semibold uppercase tracking-widest text-ring/20">Mi Cordless Screwdriver</span>
+            <h3 className="text-3xl font-bold tracking-tight mt-1 mb-6">AirPods Pro 3</h3>
+            <button className="bg-primary hover:bg-primary/50 text-text-secondary font-bold text-xs px-6 py-2.5 rounded-full transition-all shadow-md">
               Shop Now
             </button>
           </div>
 
           {/* Large AirPods Graphic Representation Container */}
-          <div className="w-full h-36 flex items-end justify-center z-10">
+          <div className="w-full h-60 flex items-end justify-center z-10">
             <img 
               src="https://woodmart.xtemos.com/electronics-3/wp-content/uploads/sites/27/2025/10/ed-home-banner-air-pods-1024x614.jpg.webp" 
               alt="AirPods Pro 3 Hero Item"
@@ -119,7 +119,7 @@ export default function LimitedOffersSection() {
           </div>
 
           {/* Subdued design ambient glows inside card background */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
         </div>
 
         {/* Right Aspect: Sub-Product Rows Grid Layout */}
@@ -127,10 +127,10 @@ export default function LimitedOffersSection() {
           {SMALL_PRODUCTS.map((product) => (
             <div 
               key={product.id}
-              className="flex items-center gap-4 bg-white border border-gray-100 rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer group"
+              className="flex items-center gap-4 bg-background border border-ring/10 rounded-2xl p-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer group"
             >
               {/* Product Thumbnail */}
-              <div className="w-16 h-16 bg-gray-50 rounded-xl p-1 flex items-center justify-center shrink-0 overflow-hidden">
+              <div className="w-16 h-16 bg-ring/10 rounded-xl p-1 flex items-center justify-center shrink-0 overflow-hidden">
                 <img 
                   src={product.image} 
                   alt={product.title} 
@@ -140,7 +140,7 @@ export default function LimitedOffersSection() {
 
               {/* Text Meta Content */}
               <div className="flex flex-col justify-center">
-                <h4 className="text-sm font-bold text-gray-800 line-clamp-1 group-hover:text-blue-600 transition-colors">
+                <h4 className="text-sm font-bold text-ring line-clamp-1 group-hover:text-primary/50 transition-colors">
                   {product.title}
                 </h4>
                 {/* Rating Stars Row */}
@@ -149,12 +149,12 @@ export default function LimitedOffersSection() {
                     <Star key={index} size={13} className="fill-current" />
                   ))}
                 </div>
-                <span className="text-sm font-extrabold text-blue-600">{product.price}</span>
+                <span className="text-sm font-extrabold text-primary">{product.price}</span>
               </div>
             </div>
           ))}
            {/* --- FOOTNOTE DISCLAIMERS --- */}
-      <div className=" pt-4 border-t border-gray-50 text-[11px] font-semibold text-gray-400 space-y-1">
+      <div className=" pt-4 border-t border-ring/10 text-[11px] font-semibold text-ring space-y-1">
         <p>*Number of products is limited!</p>
         <p>**Promotional products cannot be combined with promotional codes.</p>
       </div>

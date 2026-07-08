@@ -13,13 +13,13 @@ import {
 
 export default function FAQPage() {
   // State to track which FAQ accordion is active
-  const [activeId, setActiveId] = useState(null);
+  const [activeId, setActiveId] = useState<number | null>(null);
   // State for category filtering
   const [activeCategory, setActiveCategory] = useState('all');
 
-  const toggleAccordion = (id) => {
-    setActiveId(activeId === id ? null : id);
-  };
+const toggleAccordion = (id: number) => {
+  setActiveId(activeId === id ? null : id);
+};
 
   const categories = [
     { id: 'all', name: 'All Questions', icon: HelpCircle },

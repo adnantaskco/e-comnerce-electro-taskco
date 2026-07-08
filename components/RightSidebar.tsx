@@ -53,7 +53,7 @@ const HotDealsSidebar = () => {
   const activeItem = hotDealsData[currentIndex];
 
   return (
-    <div className="lg:col-span-1 border border-ring/5 rounded-xl p-5 bg-background shadow-sm flex flex-col justify-between h-full relative group/slider">
+    <div className="lg:col-span-1 border border-ring/5 rounded-xl p-1 bg-background shadow-sm flex flex-col justify-between h-full relative group/slider">
       <div>
         {/* Header */}
         <div className="flex items-center justify-between mb-5">
@@ -88,7 +88,7 @@ const HotDealsSidebar = () => {
               />
             </div>
 
-            <button className="mt-2 bg-primary text-text-secondary border border-ring/10 hover:bg-ring/10  text-xs font-bold px-5 py-1.5 rounded-full shadow-sm transition-all active:scale-95">
+            <button className="mt-2 bg-primary text-text-secondary border border-ring/10 hover:bg-primary/50  text-xs font-bold px-5 py-1.5 rounded-full shadow-sm transition-all active:scale-95">
               Buy Now
             </button>
           </div>

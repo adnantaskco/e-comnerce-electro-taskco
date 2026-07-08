@@ -39,11 +39,11 @@ export default function HeroSection() {
 
 
   return (
-    <div className="container mx-auto px-4 py-3 md:px-16">
+    <div className="container mx-auto px-4 py-8 md:px-16">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         
         {/* --- LEFT SIDEBAR: CATEGORIES --- */}
-        <div className="hidden md:block lg:col-span-1 rounded-2xl border border-ring/20 bg-primary/10 p-5 shadow-sm">
+        <div className="hidden md:block lg:col-span-1 rounded-2xl border border-ring/20 bg-primary/5 p-5 shadow-sm">
         <h2 className="mb-6 text-2xl font-bold text-text-primary">
           Choose Your Favourite
         </h2>
@@ -54,7 +54,7 @@ export default function HeroSection() {
               key={cat.name}
               className="group flex cursor-pointer items-center gap-4 rounded-xl p-1 transition-all duration-300 hover:bg-primary/5 hover:shadow-md"
             >
-              <div className="flex h-10 w-10 items-center rounded-4xl justify-center rounded-xl bg-gray-100 group-hover:bg-white">
+              <div className="flex h-10 w-10 items-center rounded-4xl justify-center rounded-xl bg-background group-hover:bg-background/2">
                 <img
                   src={cat.image}
                   alt={cat.name}
@@ -79,7 +79,7 @@ export default function HeroSection() {
         </div>
 
         {/* --- RIGHT SIDEBAR: HOT DEALS --- */}
-        <div className="lg:col-span-1 border border-ring/10 rounded-lg p-2 bg-white shadow-sm flex flex-col justify-between">
+        <div className="lg:col-span-1 border border-ring/10 rounded-lg p-2 bg-background shadow-sm flex flex-col justify-between">
 
               <HotDealsSidebar></HotDealsSidebar>
 

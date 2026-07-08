@@ -1,4 +1,6 @@
 "use client"
+
+import type { FormEvent, ChangeEvent } from "react";
 import React, { useState } from 'react';
 import { 
   Mail, 
@@ -20,18 +22,18 @@ export default function ContactPage() {
     message: ''
   });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Simulate API Form Submission
-    setTimeout(() => {
-      setFormSubmitted(true);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 800);
-  };
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+};
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+const handleChange = (
+  e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => {
+  setFormData({
+    ...formData,
+    [e.target.name]: e.target.value,
+  });
+};
 
   return (
     <div className="bg-slate-50 text-slate-800 font-sans min-h-screen selection:bg-blue-500 selection:text-white">
@@ -166,7 +168,7 @@ export default function ContactPage() {
               <div>
                 <label className="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">How can we help?</label>
                 <textarea 
-                  rows="5"
+                 rows={5}
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
