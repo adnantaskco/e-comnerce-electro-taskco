@@ -1,4 +1,6 @@
+import Link from 'next/link';
 import React from 'react';
+import { FaShopify } from 'react-icons/fa6';
 
 function TopNavbar() {
   return (
@@ -9,11 +11,21 @@ function TopNavbar() {
           {/* Announcement/Promo Badging */}
           <div className="flex items-center gap-2 text-ring font-medium text-xs tracking-wider uppercase">
            
-            <p>Free shipping for all orders of $1,200+</p>
+            <p>Free shipping for all orders of BDT 1,200+</p>
           </div>
 
           {/* Quick Links Navigation */}
           <nav className="flex items-center gap-4 md:gap-6 text-ring text-xs md:text-sm font-medium">
+           <Link
+               href="/products"
+               className='flex items-baseline justify-center gap-2'>
+                 <FaShopify
+                 className="mx-auto mb-2"
+                   size={22}
+                    />
+                  <span className="text-sm">Products</span>
+                  </Link>
+           
             <a 
               href="/blog" 
               className="py-1 sm:py-3 hover:text-primary transition-colors duration-200 relative group"
