@@ -13,7 +13,7 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-ring/10 px-4">
-      <div className="w-full max-w-md text-text-primary bg-backfround p-6 rounded-lg shadow sticky ">
+      <div className="w-full max-w-md text-text-primary bg-background p-6 rounded-lg shadow sticky ">
         <h1 className="text-2xl text-primary font-bold text-center mb-2">Login</h1>
 
         <p className="text-center text-ring mb-6">
