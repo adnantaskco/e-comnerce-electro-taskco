@@ -22,7 +22,7 @@ export default function MainNav() {
       />
 
       {/* Navbar */}
-      <header className="sticky top-0 z-40 border-b border-border/30 bg-background/80 backdrop-blur-xl">
+      <section className="sticky top-0 z-40 border-b border-border/30 bg-background/80 backdrop-blur-xl">
         <div className="container mx-auto px-4 sm:px-6 md:px-16 py-3">
 
           {/* Top Row */}
@@ -139,7 +139,7 @@ export default function MainNav() {
           </div>
 
         </div>
-      </header>
+      </section>
     </>
   );
 }

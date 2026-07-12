@@ -13,11 +13,12 @@ import IphoneCard from "@/components/productcard/Mobilecard";
 import KitechenCard from "@/components/productcard/kitechencard";
 import BestsellerTabs from "@/components/tab";
 import GamingCard from "@/components/productcard/GamingCard";
+import { CartProvider } from "./context/CartContext";
 
 export default function Home() {
   return (
 <>
-
+<CartProvider>
 <HeroSection></HeroSection>
 <BrandLogos></BrandLogos>
 <BestsellerTabs/>
@@ -29,7 +30,7 @@ export default function Home() {
 <UsefulArticles></UsefulArticles>
 <SeoDescriptionSection></SeoDescriptionSection>
 
-
+</CartProvider>
 
 </>
   );
