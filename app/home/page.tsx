@@ -8,12 +8,18 @@ import UsefulArticles from "@/components/artical";
 import KitechenCard from "@/components/productcard/kitechencard";
 import BestsellerTabs from "@/components/tab";
 import GamingCard from "@/components/productcard/GamingCard";
-import Homepage from "./home/page";
 
-export default function page() {
+export default function Homepage() {
   return (
     <>
-    <Homepage/>
+      <HeroSection />
+      <BrandLogos />
+      <BestsellerTabs />
+      <KitechenCard />
+      <LimitedOffersSection />
+      <GamingCard />
+      <UsefulArticles />
+      <SeoDescriptionSection />
     </>
   );
 }

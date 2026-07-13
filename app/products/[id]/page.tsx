@@ -7,7 +7,7 @@ import React, { useState } from "react";
 import { useCart } from "../../context/CartContext"; 
 import { CiStar } from "react-icons/ci";
 import { FiMinus, FiPlus } from "react-icons/fi"; // Added intuitive icons for +/-
-import { FaCartArrowDown, FaHeart, FaShoppingCart } from "react-icons/fa";
+import { FaHeart, FaShoppingCart } from "react-icons/fa";
 import Link from "next/link";
 import { FaEye, FaStar } from "react-icons/fa6";
 
@@ -207,7 +207,7 @@ const handleSubmitReview = (e: React.FormEvent<HTMLFormElement>) => {
           {activeTab === "description" && (
             <div>
               <h3 className="font-bold text-text-primary text-lg mb-3">Product Details</h3>
-              <p className="text-muted-foreground text-text-primary leading-7">
+              <p className=" text-text-primary leading-7">
                   Experience the perfect combination of performance, style, and reliability with the{" "}
                   <span className="font-semibold">{product.name}</span> from{" "}
                   <span className="font-semibold">{product.brand}</span>. Carefully designed to deliver
@@ -309,7 +309,7 @@ const handleSubmitReview = (e: React.FormEvent<HTMLFormElement>) => {
               onMouseEnter={() => setHoverRating(star)}
               onMouseLeave={() => setHoverRating(0)}
             >
-              ★
+              <CiStar></CiStar>
             </button>
           ))}
         </div>
